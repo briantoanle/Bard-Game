@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CSC108H5F Fall 2022, Assignment 3</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">CSC108H5F Fall 2022, Assignment 3</h1>
+</header>
+<p>Due: To be submitted individually by Mon Nov 21, 22:00, on MarkUs</p>
+<p>Please see the bottom of this page for important assignment reminders.</p>
+<p>Please be sure to download all starter files from MarkUs.</p>
+<h1 id="background">Background</h1>
+<p>Once upon a time, in a certain medieval village, a group of mysterious strangers appeared in jeans and T-shirts. The strangers managed to learn enough Old English to explain that they had been enjoying their favourite pastime – belting out tunes at a karaoke party – when they saw a blinding flash and heard a thunderous roar, lost consciousness, and found themselves transported back in time without any explanation.</p>
+<p>The villagers were most interested in the strangers’ wide-ranging knowledge of popular songs from the future. They understood that the strangers belonged to some sort of bard class. The villagers were also party animals, and had a feast every night. The bards agreed to come to some of the parties and sing one Billboard Top 40 song whenever they did. When they weren’t there, the villagers would sing these songs to each other, reverently, knowing that they held clues to the future of their world. The more they learned, the more they were able to share, and some were even initiated into the mysterious strangers’ inner circle and allowed to become bards themselves.</p>
+<h1 id="your-task">Your task</h1>
+<p>Simulate the above village with its nightly parties.</p>
+<p>You’ll be given a list of villagers and bards. You’ll also get a list of songs. The bards start out knowing every song, but no one else knows any songs.</p>
+<p>You’ll be given a list of parties with their attendees, in the order that the parties are held. Every party features singing. There are two ways a party can unfold:</p>
+<ul>
+<li>If there’s at least one bard present, they sing a song that none of the regular villagers at the party know yet. Specifically, the bard sings the first new song alphabetically, according to Python’s sort order of strings.<br />
+</li>
+<li>If there are no bards present, everyone at the party sings all the songs they know at that point.</li>
+</ul>
+<p>Either way, whenever a song is sung, everyone at the party learns and remembers it.</p>
+<p>If a villager learns enough songs, and they’re at a party with a bard, they too become a bard and learn every song.</p>
+<p>Finally, you’ll calculate some statistics about the simulation.</p>
+<h1 id="sets">Sets</h1>
+<p>One of the concepts you’ll be practicing throughout this assignment is <a href="https://docs.python.org/3.9/library/stdtypes.html#set-types-set-frozenset"><strong>sets</strong></a>.</p>
+<p>A set is very much like a list, with a few differences:</p>
+<ul>
+<li>There are no duplicate values in a set. No matter what you do, values are always unique.<br />
+</li>
+<li>Sets have no order. There are no indices and you can’t access individual elements.<br />
+</li>
+<li>Checking whether a value is in a set is instantaneous, no matter the size.</li>
+</ul>
+<p>Sets have their own set of operations as described in <strong><a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a></strong>. You may find set union and set difference useful and, in general, you will find sets a valuable tool throughout this assignment.</p>
+<h1 id="input-file">Input File</h1>
+<p>Each test case is one input file. Here’s a sample input file:</p>
+<pre><code>VILLAGERS
+Luke Sawczak
+Dan Zingaro*
+Freddie Prinze Jr.
+Arnold Rosenbloom
+
+SONGS
+People, I&#39;ve Been Sad
+Call Me Maybe
+What a Man Gotta Do
+Delete Forever
+
+PARTIES
+Dan Zingaro,Freddie Prinze Jr.,Arnold Rosenbloom
+Arnold Rosenbloom,Luke Sawczak,Freddie Prinze Jr.
+Dan Zingaro,Luke Sawczak
+Freddie Prinze Jr.,Luke Sawczak,Arnold Rosenbloom</code></pre>
+<p>People with an asterisk <code>*</code> after their name are bards. However, the asterisk isn’t part of their name – notice there are no asterisks in the list of parties.</p>
+<p>Of course, there may be any number of villagers, bards, songs, and parties (including zero). An important task is to write the <code>read_input</code> function, which parses the input into the villagers, bards, songs, and parties structures in Python. (<em>HINT</em>: how can you tell when one part of the file ends? You need to keep track of which part of the file you are working on now!)</p>
+<h2 id="walkthrough-of-the-above-example">Walkthrough of the above example</h2>
+<p>Let’s say for this example that the threshold to become a bard is <code>2</code> songs. The first party has a bard, Dan. He’s a bard so he knows every song. He sings Call Me Maybe (the first alphabetical song that no one at the party knows). At the next party, there’s no bard, but Arnold and Freddie teach Call Me Maybe to Luke. At the third party, Dan the bard is back. Since Luke already knows Call Me Maybe, Dan debuts Delete Forever next. At the fourth party, Luke teaches Freddie and Arnold Delete Forever. Under our assumption that the threshold to become a bard is <code>2</code> songs, Luke would have qualified to be a bard after the third party, and Freddie and Arnold after the fourth party.</p>
+<h1 id="statistics">Statistics</h1>
+<p>After the simulation, you will prepare and return these stats on your village’s parties:</p>
+<ol type="1">
+<li><code>unheard_songs</code>: The set of songs that have never been heard by non-bards.<br />
+</li>
+<li><code>billboard_top</code>: A list of the n best-known songs in descending order from songs known by the most people to songs known by the fewest. Break ties alphabetically, according to Python’s sort order of strings. (<em>HINT</em>: the list <code>sort</code> method is going to be very helpful here. What criterion does it sort on by default? How many times will you need to sort? What can the <code>key</code> parameter be used for?)</li>
+<li><code>all_bards</code>: The set of people who are bards, whether they started out as one or became one by learning enough songs.<br />
+</li>
+<li><code>average_attendees</code>: The average number of people at a party. Round up to the nearest integer (so both 1.7 and 1.1 should become 2).</li>
+</ol>
+<h1 id="starter-code">Starter code</h1>
+<p>Please find your starter code and test examples in MarkUs.</p>
+<p>In <code>bard.py</code>, you’ll find functions marked with <code>TODO</code> whose implementations you must complete.</p>
+<p>You also have a couple of <code>import</code> statements to make the type annotations work and constants for the number of songs a villager must know to become a bard and the number of Billboard Top songs.</p>
+<p>Take some time to read over the starter code to understand the structure, as well as the functions you’ve been given and the functions you must write.</p>
+<h1 id="testing">Testing</h1>
+<p>We have a thorough set of tests on which we’ll run your code. Everything we’ll test has been discussed here and in the starter code, so please read both carefully!</p>
+<p>The starter code has some tests, including one holistic test (the statistics you should output for the sample given above), which you can try out by running <code>test_bard.py</code>.</p>
+<h1 id="f.a.q.">F.A.Q.</h1>
+<p><strong>Can there be duplicate villager names or song names?</strong><br />
+No.</p>
+<p><strong>What happens if there are multiple bards at a party?</strong><br />
+Only one of them sings. It doesn’t matter which one, since they would all choose the same next song.</p>
+<p><strong>What happens if there are only bards at a party?</strong><br />
+Whether anyone sings or not makes no difference since all the bards already know all the songs.</p>
+<p><strong>What happens if there are no new songs for a bard to sing?</strong><br />
+The party is boring. No one sings. Nothing changes.</p>
+<p><strong>What happens if a party has no bard, but during the party a villager learns enough songs to become one?</strong><br />
+A villager can only become a bard at a party that already has a bard, so this can’t happen. A party either has a bard at the beginning or doesn’t, and a party’s status never changes once it’s begun.</p>
+<p><strong>If there’s a party where a villager learns enough songs to become a bard but there isn’t a bard at the party, do they miss their chance?</strong><br />
+No, they become a bard at the next party they attend where there’s a bard (if they ever attend such a party).</p>
+<h1 id="important-reminders">Important Reminders</h1>
+<ul>
+<li>Compared to prior assignments, note this time that we are asking you to write functions that do what we have specified. <em>None</em> of your functions should use <code>input</code> or <code>print</code>.</li>
+<li>Please don’t change what you have been given in the starter code. If you do, then our correctness tests on your code will not work correctly.
+<ul>
+<li>For the code we have given you, do not add or remove any parameters, change any parameters or return types, or change any type annotations.</li>
+</ul></li>
+<li>Please don’t add additional import statements.</li>
+<li>You can and <em>should</em> add helper functions to keep your code organized.</li>
+<li>Test, test, test! The test cases that we give you are not to be considered full testing.</li>
+<li>Please submit all of your files to MarkUs.</li>
+<li>You must work alone on this assignment.</li>
+<li>The final thing you should do is to open your code files in Notepad and make sure that the code displays correctly as only Python code.</li>
+</ul>
+</body>
+</html>
